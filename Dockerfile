@@ -25,6 +25,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sources.list.d/multiverse.list
 RUN apt-get update && apt-get install -y \
   perl-qvd-client
+RUN apt-mark hold sshfs
 RUN apt-get update && apt-get install -y \
   kubuntu-desktop \
   cups \

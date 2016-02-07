@@ -25,9 +25,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sources.list.d/multiverse.list
 RUN apt-get update && apt-get install -y \
   perl-qvd-client
-RUN apt-mark hold sshfs
 RUN echo "deb http://cpan-mirror.int.qindel.com/packages NX main" > /etc/apt/sources.list.d/qvd-nx.list
 RUN apt-get update && apt-get install -o Dpkg::Options::="--force-overwrite" -y --force-yes qvd-libnx-x11 qvd-libxcomp3 qvd-nx-x11-common qvd-libnx-x11-6 qvd-nxproxy qvd-libxcompshad3 qvd-libxcompext3
+RUN apt-mark hold sshfs
 RUN apt-get update && apt-get install -y \
   kubuntu-desktop \
   cups \
